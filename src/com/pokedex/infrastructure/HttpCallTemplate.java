@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class HttpCallTemplate {
-	public void get() throws Exception {
-		String baseUrl = "https://pokeapi.co/api/v2/pokemon/ditto/";
+public abstract class HttpCallTemplate implements HttpCall {
+	public String get(String resourceName) throws Exception {
+		String baseUrl = getBaseUrl() + "/" + getResourceType() + "/" + resourceName;
 		URL url = new URL(baseUrl);
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestMethod("GET");
@@ -22,6 +22,10 @@ public class HttpCallTemplate {
 		}
 		in.close();
 		con.disconnect();
-		System.out.println(response.toString());
+		return response.toString();
 	}
+	
+	abstract String getBaseUrl();
+
+	abstract String getResourceType();
 }
