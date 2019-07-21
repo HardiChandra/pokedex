@@ -1,0 +1,2 @@
+javac -d ./out/production/pokedex -classpath "./src:./lib/*" ./src/com/pokedex/Application.java
+java -classpath "./out/production/pokedex:./lib/*" com.pokedex.Application
