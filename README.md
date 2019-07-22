@@ -2,7 +2,7 @@
 A simple pokedex java application
 
 # Requirement
-You must be connected to the internet and have java 8 installed to run this.
+You must be connected to the internet and have [java 8](https://java.com/en/download/help/download_options.xml) installed to run this.
 
 ## How to run 
 There's a bash script called `pokedex` created for you to run this app. Just use command like :
