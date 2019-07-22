@@ -2,6 +2,7 @@
 A simple pokedex java application
 
 ## How to run
+You must be connected to the internet to run this. 
 There's a bash script called `pokedex` created for you to run this app. Just use command like :
 ```
 ./pokedex pikachu
@@ -25,6 +26,6 @@ There's a bash script called `pokedex` created for you to run this app. Just use
     * dto = data transfer object, a middle object between domain model and data that we get from other server
     * infrastructure = holds anything that will help us do any processing across project
     * service = layer that holds business logic
-    * view = accept and pass input to controller and do all presentation of returned information
+    * view = accept and pass input to controller and do all presentation of returned information. Right now it knows about domain which is bad design, in the future controller will pass ViewModel instead.
  
  
