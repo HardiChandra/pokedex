@@ -1,8 +1,10 @@
 # Pokedex
 A simple pokedex java application
 
-## How to run
-You must be connected to the internet to run this. 
+# Requirement
+You must be connected to the internet and have java 8 installed to run this.
+
+## How to run 
 There's a bash script called `pokedex` created for you to run this app. Just use command like :
 ```
 ./pokedex pikachu
