@@ -19,7 +19,7 @@ public class CommandLineView {
 			sb.append(arg);
 			sb.append("-");
 		}
-		Resource resource = pokedexController.getResource(sb.substring(0, sb.length()-1));
+		Resource resource = pokedexController.getResource(sb.substring(0, sb.length()-1).toLowerCase());
 		if (resource == null) {
 			System.out.println("An error occurred");
 		} else if (resource instanceof Species) {
