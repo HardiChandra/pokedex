@@ -26,4 +26,20 @@ public class SpeciesDto {
 	public void setTypes(List<SpeciesTypeDto> types) {
 		this.types = types;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public List<SpeciesTypeDto> getTypes() {
+		return types;
+	}
+
+	public List<SpeciesAbilityDto> getAbilities() {
+		return abilities;
+	}
 }

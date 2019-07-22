@@ -9,4 +9,8 @@ public class SpeciesTypeDto {
 	public void setType(TypeDto type) {
 		this.type = type;
 	}
+
+	public TypeDto getType() {
+		return type;
+	}
 }

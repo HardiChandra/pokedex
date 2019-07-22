@@ -9,4 +9,8 @@ public class EffectDto {
 	public void setEffect(String effect) {
 		this.effect = effect;
 	}
+
+	public String getEffect() {
+		return effect;
+	}
 }

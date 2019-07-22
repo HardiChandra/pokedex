@@ -10,4 +10,8 @@ public class SpeciesAbilityDto {
 	public void setAbility(AbilityDto ability) {
 		this.ability = ability;
 	}
+
+	public AbilityDto getAbility() {
+		return ability;
+	}
 }
