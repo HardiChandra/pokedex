@@ -10,6 +10,10 @@ public class CommandLineView {
 	private PokedexController pokedexController = new PokedexController();
 	
 	public void view(String[] args) {
+		if (args.length < 1) {
+			System.out.println("Please input species/item name");
+			return;
+		}
 		StringBuilder sb = new StringBuilder();
 		for (String arg:args) {
 			sb.append(arg);
@@ -17,7 +21,7 @@ public class CommandLineView {
 		}
 		Resource resource = pokedexController.getResource(sb.substring(0, sb.length()-1));
 		if (resource == null) {
-			System.out.println("An error occured");
+			System.out.println("An error occurred");
 		} else if (resource instanceof Species) {
 			printSpecies((Species)resource);
 		} else if (resource instanceof Item) {
