@@ -5,6 +5,7 @@ import com.pokedex.domain.SpeciesAbility;
 import com.pokedex.dto.SpeciesAbilityDto;
 import com.pokedex.dto.SpeciesDto;
 import com.pokedex.dto.SpeciesTypeDto;
+import com.pokedex.service.PokedexService;
 
 import java.util.List;
 import java.util.function.Function;
@@ -17,8 +18,16 @@ public class SpeciesDtoToSpecies implements Function<SpeciesDto, Species> {
 	}
 
 	private List<SpeciesAbility> getAbilities(List<SpeciesAbilityDto> abilities) {
+		PokedexService pokedexService = new PokedexService();
 		return abilities.stream()
-				.map(ability -> new SpeciesAbility(ability.getAbility().getName(), null))
+				.map(ability -> {
+					try {
+						return pokedexService.getAbility(ability.getAbility().getUrl());
+					} catch (Exception e) {
+						e.printStackTrace();
+						return null;
+					}
+				})
 				.collect(Collectors.toList());
 	}
 

@@ -6,9 +6,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public abstract class HttpCallTemplate implements HttpCall {
-	public String get(String resourceName) throws Exception {
-		String baseUrl = getBaseUrl() + "/" + getResourceType() + "/" + resourceName;
-		URL url = new URL(baseUrl);
+	public String get(String fullUrl) throws Exception {
+		URL url = new URL(fullUrl);
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestMethod("GET");
 		con.setRequestProperty("User-Agent", "Mozilla/5.0");
@@ -24,8 +23,4 @@ public abstract class HttpCallTemplate implements HttpCall {
 		con.disconnect();
 		return response.toString();
 	}
-	
-	abstract String getBaseUrl();
-
-	abstract String getResourceType();
 }
