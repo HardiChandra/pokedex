@@ -3,7 +3,6 @@ package com.pokedex.converter;
 import com.pokedex.domain.Item;
 import com.pokedex.dto.EffectDto;
 import com.pokedex.dto.ItemDto;
-import com.pokedex.infrastructure.ResourceType;
 
 import java.util.List;
 import java.util.function.Function;

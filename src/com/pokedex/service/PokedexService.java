@@ -13,7 +13,7 @@ import com.pokedex.domain.SpeciesAbility;
 import com.pokedex.dto.AbilityDetailDto;
 import com.pokedex.dto.ItemDto;
 import com.pokedex.dto.SpeciesDto;
-import com.pokedex.infrastructure.AbilityPokeapiHttpCall;
+import com.pokedex.infrastructure.FullUrlHttpCall;
 import com.pokedex.infrastructure.HttpCall;
 import com.pokedex.infrastructure.ItemPokeapiHttpCall;
 import com.pokedex.infrastructure.SpeciesPokeapiHttpCall;
@@ -44,7 +44,7 @@ public class PokedexService {
 	}
 	
 	public SpeciesAbility getAbility(String url) throws Exception {
-		HttpCall httpCall = new AbilityPokeapiHttpCall();
+		HttpCall httpCall = new FullUrlHttpCall();
 		String response = httpCall.get(url);
 		AbilityDetailDto abilityDetailDto = new AbilityDetailResponseToAbilityDetailDto().apply(response);
 		return new AbilityDetailDtoToSpeciesAbility().apply(abilityDetailDto);

@@ -9,7 +9,7 @@ import com.pokedex.domain.SpeciesAbility;
 public class CommandLineView {
 	private PokedexController pokedexController = new PokedexController();
 	
-	public void view(String args[]) {
+	public void view(String[] args) {
 		StringBuilder sb = new StringBuilder();
 		for (String arg:args) {
 			sb.append(arg);

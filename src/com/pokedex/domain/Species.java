@@ -19,8 +19,4 @@ public class Species extends Resource {
 	public List<SpeciesAbility> getAbilities() {
 		return abilities;
 	}
-
-	public void setAbilities(List<SpeciesAbility> abilities) {
-		this.abilities = abilities;
-	}
 }
